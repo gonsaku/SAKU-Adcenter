@@ -47,6 +47,48 @@ nav ul li.current a{
 border-bottom: 5px solid #00B0F0;
 color: #00B0F0;
 }
+input[type="text"] {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  height: 40px;
+  background-color: #ffc400;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
+input[type="submit"]:hover {
+  background-color: #f1a707;
+}
+#g-k-w-search .gsc-control-cse { padding: 0; }
+
+/* テキストボックスに文字入力したときに出る「×」マークの位置調整用の指定 */
+#g-k-w-search .gsc-search-box { position: relative; }
+
+#g-k-w-search .gsc-search-box tr,
+#g-k-w-search .gsc-search-box td { display: block; }
+
+#g-k-w-search .gsc-search-box .gsc-input-box { background-color: #F3F3F1; }
+
+/* テキストボックスの親要素。width指定しつつfloatで左寄せ */
+#g-k-w-search .gsc-search-box td.gsc-input,
+#g-k-w-search .gsc-search-box td.gsc-input .gstl_50 {
+box-sizing: border-box;
+width: 380px !important;
+padding: 0 !important;
+margin-right: 5px;
+height: 50px;
+vertical-align: top;
+float: left;
+}
 </style>
 </head>
 <header>
@@ -54,9 +96,15 @@ color: #00B0F0;
         <ul>
             <li class="current"><a href="index.html"><img src="SAKU_Adcenter__1_-removebg-preview.png" width="150" height="100"></a></li>
             <li>
-                <script async src="https://cse.google.com/cse.js?cx=20561d41381144043">
-            </script>
-            <div class="gcse-search"></div></li>
+               <form action="https://cse.google.com/cse.js?cx=20561d41381144043" method="get">
+  <input type="text" name="query" placeholder="キーワードを入力" list="keywords">
+  <datalist id="keywords">
+    <option value="HTML">
+    <option value="CSS">
+    <option value="JavaScript">
+  </datalist>
+  <input type="submit" value="検索">
+</form>
         </ul>
     </nav>
     <nav>
